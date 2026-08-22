@@ -1,216 +1,360 @@
-<!-- Top Bar -->
-<div class="bg-black text-white py-2 text-sm hidden md:block">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-        <div>
-            <i class="fas fa-phone-alt text-gold mr-2"></i> +91 9182485922
-            <span class="mx-4 text-gray-600">|</span>
-            <i class="fas fa-envelope text-gold mr-2"></i> patnaglobalschool@gmail.com
-        </div>
-        <div class="flex items-center space-x-4 text-gold">
-            <a href="https://www.instagram.com/patna_global_school/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@Patna_Global_School" target="_blank"><i class="fab fa-youtube"></i></a>
-            <span class="bg-gold text-navy px-3 py-0.5 font-bold rounded text-[10px] ml-2">Est. 2026</span>
-        </div>
-    </div>
-</div>
-
-
-<!-- Navigation -->
-<nav class="bg-white shadow-xl sticky top-0 z-50">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="logo.png" alt="Logo" class="h-16 w-16 md:h-20 md:w-20 mr-3">
-            <div class="leading-tight">
-                <h1 class="text-xl md:text-2xl font-bold text-navy tracking-tighter uppercase">Patna Global School</h1>
-                <p class="text-[10px] md:text-xs font-bold text-gold tracking-[0.2em] uppercase">Learn • Discover • Lead</p>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patna Global School | Learn. Discover. Lead.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --navy: #1a2e5a; --gold: #c5a059; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-gold { background-color: var(--gold); }
+        .text-gold { color: var(--gold); }
         
-        <div class="hidden lg:flex space-x-6 font-semibold text-navy items-center text-xs uppercase">
-            <a href="#home" class="hover:text-gold transition">Home</a>
-            <a href="#academics" class="hover:text-gold transition">Academics</a>
-            <a href="#grades" class="hover:text-gold transition">Grades</a>
-            <a href="#notices" class="hover:text-gold transition">Notices</a>
-            <a href="Admission_Form_2026.pdf" target="_blank" class="bg-navy text-white px-5 py-2 rounded-full hover:bg-gold hover:text-navy transition shadow-md">
-                <i class="fas fa-file-download mr-2"></i> Admission 2026
-            </a>
-        </div>
-    </div>
-</nav>
+        section { scroll-margin-top: 100px; }
 
-<!-- Hero Section -->
-<header id="home" class="hero-bg h-[450px] flex items-center text-white">
-    <div class="container mx-auto px-6">
-        <div class="max-w-3xl">
-            <h2 class="text-gold font-bold tracking-widest mb-4 uppercase">Registration Now Open</h2>
-            <h3 class="text-5xl md:text-6xl font-serif mb-6 leading-tight">Nurturing Minds for a <span class="text-gold">Global Future.</span></h3>
-            <a href="Admission_Form_2026.pdf" target="_blank" class="bg-gold text-navy px-8 py-4 rounded font-bold text-lg hover:bg-white transition inline-block shadow-2xl">
-                <i class="fas fa-edit mr-2"></i> Apply Now (Download Form)
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- Academics Section -->
-<section id="academics" class="py-20 bg-white">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-gold font-bold uppercase tracking-widest mb-2">School Administration</h2>
-        <h3 class="text-4xl font-serif text-navy mb-12">Academics & Administration</h3>
+        .hero-bg { 
+            background: linear-gradient(rgba(26, 46, 90, 0.8), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .notice-scroll { max-height: 500px; overflow-y: auto; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; border-color: var(--gold); cursor: pointer; }
         
-        <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-            <div class="bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-gray-200 card-hover">
-                <i class="fas fa-calendar-alt text-5xl text-navy mb-4"></i>
-                <h4 class="text-xl font-bold text-navy mb-2 uppercase">Academic Calendar</h4>
-                <a href="Academic_Calendar_2026.pdf" target="_blank" class="mt-4 inline-block bg-navy text-white px-6 py-2 rounded-lg hover:bg-gold transition">View Calendar</a>
+        /* Smooth transition for hidden elements */
+        .hidden-content { display: none; transition: all 0.5s ease-in-out; }
+        .show { display: block !important; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-900">
+
+    <!-- Top Bar -->
+    <div class="bg-black text-white py-2 text-sm hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div>
+                <i class="fas fa-phone-alt text-gold mr-2"></i> +91 9182485922
+                <span class="mx-4 text-gray-600">|</span>
+                <i class="fas fa-envelope text-gold mr-2"></i> patnaglobalschool@gmail.com
             </div>
-            <div class="bg-slate-50 p-8 rounded-2xl border-2 border-dashed border-gray-200 card-hover">
-                <i class="fas fa-file-invoice-dollar text-5xl text-navy mb-4"></i>
-                <h4 class="text-xl font-bold text-navy mb-2 uppercase">Fee Structure</h4>
-                <a href="Fee_Structure_2026.pdf" target="_blank" class="mt-4 inline-block bg-navy text-white px-6 py-2 rounded-lg hover:bg-gold transition">View Fees</a>
+            <div class="flex items-center space-x-4 text-gold">
+                <a href="https://www.instagram.com/patna_global_school/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Patna_Global_School" target="_blank"><i class="fab fa-youtube"></i></a>
+                <span class="bg-gold text-navy px-3 py-0.5 font-bold rounded text-[10px] ml-2">Est. 2026</span>
             </div>
         </div>
     </div>
-</section>
 
-<!-- Grades Section -->
-<section id="grades" class="py-20 bg-slate-100">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <div class="bg-gold text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg text-3xl">
-                <i class="fas fa-book-open"></i>
-            </div>
-            <h3 class="text-4xl font-serif text-navy">Our Grade Levels</h3>
-        </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Kindergarten Routines -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Play Group</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_Play.pdf" target="_blank" class="text-[10px] bg-navy text-white px-4 py-2 rounded hover:bg-gold transition font-bold">View Routine</a>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.png" alt="Logo" class="h-16 w-16 md:h-20 md:w-20 mr-3">
+                <div class="leading-tight">
+                    <h1 class="text-xl md:text-2xl font-bold text-navy tracking-tighter uppercase">Patna Global School</h1>
+                    <p class="text-[10px] md:text-xs font-bold text-gold tracking-[0.2em] uppercase">Learn • Discover • Lead</p>
+                </div>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Nursery (N.C)</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_NC.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">L.K.G</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_LKG.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">U.K.G</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_UKG.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-
-            <!-- Classes 1-8 Routines & Syllabuses -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 1</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_Class1.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 2</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_Class2.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 3</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
-                <a href="Routine_Class3.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 4</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Available</p>
-                <a href="Routine_Class4.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-                <a href="Class4_Syllabus.pdf" target="_blank" class="text-[10px] text-gold font-bold underline block mt-2 uppercase">Syllabus</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 5</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Available</p>
-                <a href="Routine_Class5.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-                <a href="Class5_Syllabus.pdf" target="_blank" class="text-[10px] text-gold font-bold underline block mt-2 uppercase">Syllabus</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 6</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Available</p>
-                <a href="Routine_Class6.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-                <a href="Class6_Syllabus.pdf" target="_blank" class="text-[10px] text-gold font-bold underline block mt-2 uppercase">Syllabus</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 7</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Available</p>
-                <a href="Routine_Class7.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-                <a href="Class7_Syllabus.pdf" target="_blank" class="text-[10px] text-gold font-bold underline block mt-2 uppercase">Syllabus</a>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
-                <h5 class="font-bold text-navy text-lg">Class 8</h5>
-                <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Available</p>
-                <a href="Routine_Class8.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
-                <a href="Class8_Syllabus.pdf" target="_blank" class="text-[10px] text-gold font-bold underline block mt-2 uppercase">Syllabus</a>
+            
+            <div class="hidden lg:flex space-x-6 font-semibold text-navy items-center text-xs uppercase">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <!-- Added onclick to reveal academic files when clicking link -->
+                <a href="#academics" onclick="toggleAcademics()" class="hover:text-gold transition">Academics</a>
+                <a href="#grades" class="hover:text-gold transition">Grades</a>
+                <a href="#notices" class="hover:text-gold transition">Notices</a>
+                <a href="Admission_Form_2026.pdf" target="_blank" class="bg-navy text-white px-5 py-2 rounded-full hover:bg-gold hover:text-navy transition shadow-md">
+                    <i class="fas fa-file-download mr-2"></i> Admission 2026
+                </a>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- Notice Board Section -->
-<section id="notices" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-200">
-            <div class="md:w-1/3 bg-navy text-white p-10 flex flex-col justify-center relative">
-                <i class="fas fa-bell text-5xl text-gold mb-6"></i>
-                <h3 class="text-3xl font-serif mb-4">Notice Board</h3>
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg h-[450px] flex items-center text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <h2 class="text-gold font-bold tracking-widest mb-4 uppercase">Registration Now Open</h2>
+                <h3 class="text-5xl md:text-6xl font-serif mb-6 leading-tight">Nurturing Minds for a <span class="text-gold">Global Future.</span></h3>
+                <a href="Admission_Form_2026.pdf" target="_blank" class="bg-gold text-navy px-8 py-4 rounded font-bold text-lg hover:bg-white transition inline-block shadow-2xl">
+                    <i class="fas fa-edit mr-2"></i> Apply Now (Download Form)
+                </a>
             </div>
-            <div class="md:w-2/3 p-6 md:p-12 notice-scroll bg-slate-50">
-                
-                <!-- Updated Competition Notice from PDF -->
-                <div class="bg-white p-8 rounded-2xl border-t-8 border-gold shadow-lg">
-                    <div class="flex justify-between items-start mb-6">
+        </div>
+    </header>
+
+    <!-- NEW: About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-gold font-bold uppercase tracking-widest mb-2">Welcome To</h2>
+                <h3 class="text-4xl font-serif text-navy">Patna Global School</h3>
+                <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- School Info -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border-b-4 border-navy">
+                    <h4 class="text-xl font-bold text-navy mb-4 uppercase italic">Our School</h4>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Patna Global School is committed to providing a world-class educational experience. We focus on holistic development, combining academic excellence with co-curricular activities to prepare students for the challenges of a globalized world. Our 2026-27 session brings modern facilities and a child-centric curriculum.
+                    </p>
+                </div>
+
+                <!-- Director Info -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border-b-4 border-gold">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-navy text-white p-3 rounded-full mr-4"><i class="fas fa-user-tie"></i></div>
                         <div>
-                            <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase animate-pulse">Upcoming Event</span>
-                            <h4 class="font-bold text-navy text-2xl mt-3 tracking-tight">Rakhi Making & Mehndi Designing</h4>
-                            <p class="text-xs text-gray-400 mt-1">Event Date: 27th August 2026</p>
+                            <h4 class="text-lg font-bold text-navy uppercase leading-none">Bhushan Kumar</h4>
+                            <p class="text-xs text-gold font-bold">Director</p>
                         </div>
-                        <a href="Rakhi_Competition_Notice.pdf" target="_blank" class="bg-navy text-gold p-3 rounded text-center min-w-[60px] hover:bg-gold hover:text-navy transition">
-                            <i class="fas fa-file-pdf text-xl"></i>
-                            <span class="block text-[8px] mt-1 uppercase font-bold">PDF</span>
-                        </a>
                     </div>
-                    <div class="text-sm text-gray-700 space-y-2 mb-4">
-                        <p>Inter-house competition for <strong>Grades 3 to 8</strong> to celebrate Raksha Bandhan.</p>
-                        <ul class="list-disc list-inside text-xs space-y-1 text-gray-600">
-                            <li><strong>Time:</strong> After lunch (5th & 6th periods)</li>
-                            <li><strong>Venue:</strong> NC Class</li>
-                            <li><strong>Rule:</strong> Bring your own raw materials (ribbons, beads, cones).</li>
-                        </ul>
+                    <p class="text-gray-600 leading-relaxed text-sm italic">
+                        "Our vision is to build an institution where innovation meets tradition. We aim to empower students with values and skills that lead to leadership and success."
+                    </p>
+                </div>
+
+                <!-- Principal Info -->
+                <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border-b-4 border-navy">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gold text-navy p-3 rounded-full mr-4"><i class="fas fa-user-graduate"></i></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-navy uppercase leading-none">Poonam Kumari</h4>
+                            <p class="text-xs text-gold font-bold">Principal</p>
+                        </div>
                     </div>
-                    <div class="bg-navy/5 p-4 rounded-lg border-l-4 border-navy">
-                        <p class="text-xs text-navy font-bold italic underline">Consent form must be submitted to Shubham Sir by 26th August.</p>
+                    <p class="text-gray-600 leading-relaxed text-sm italic">
+                        "Education is not just about learning facts, but training the mind to think. At Patna Global School, we ensure every child is heard, nurtured, and encouraged to excel."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section (Interactive) -->
+    <section id="academics" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-gold font-bold uppercase tracking-widest mb-2">School Administration</h2>
+            <h3 class="text-4xl font-serif text-navy mb-6">Academics & Administration</h3>
+            
+            <button onclick="toggleAcademics()" class="mb-10 bg-navy text-white px-8 py-3 rounded-full font-bold hover:bg-gold hover:text-navy transition shadow-lg">
+                <i class="fas fa-eye mr-2"></i> Click to View Academic Files
+            </button>
+            
+            <div id="academic-files" class="hidden-content grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl border-2 border-dashed border-gray-200 card-hover">
+                    <i class="fas fa-calendar-alt text-5xl text-navy mb-4"></i>
+                    <h4 class="text-xl font-bold text-navy mb-2 uppercase">Academic Calendar</h4>
+                    <a href="Academic_Calendar_2026.pdf" target="_blank" class="mt-4 inline-block bg-navy text-white px-6 py-2 rounded-lg hover:bg-gold transition">View Calendar</a>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border-2 border-dashed border-gray-200 card-hover">
+                    <i class="fas fa-file-invoice-dollar text-5xl text-navy mb-4"></i>
+                    <h4 class="text-xl font-bold text-navy mb-2 uppercase">Fee Structure</h4>
+                    <a href="Fee_Structure_2026.pdf" target="_blank" class="mt-4 inline-block bg-navy text-white px-6 py-2 rounded-lg hover:bg-gold transition">View Fees</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grades Section (Interactive) -->
+    <section id="grades" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <div class="bg-gold text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg text-3xl">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-4xl font-serif text-navy">Our Grade Levels</h3>
+                <p class="text-gray-500 mt-2">Click on a class to view Routine and Syllabus</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Class Card Template (Repeated for all classes) -->
+                <!-- Play Group -->
+                <div onclick="toggleGrade('play')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Play Group</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="play" class="hidden-content mt-4 pt-4 border-t border-gray-100">
+                        <a href="Routine_Play.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                    </div>
+                </div>
+
+                <!-- Nursery -->
+                <div onclick="toggleGrade('nc')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Nursery (N.C)</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="nc" class="hidden-content mt-4 pt-4 border-t border-gray-100">
+                        <a href="Routine_NC.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                    </div>
+                </div>
+
+                <!-- LKG -->
+                <div onclick="toggleGrade('lkg')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">L.K.G</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="lkg" class="hidden-content mt-4 pt-4 border-t border-gray-100">
+                        <a href="Routine_LKG.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                    </div>
+                </div>
+
+                <!-- UKG -->
+                <div onclick="toggleGrade('ukg')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-navy card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">U.K.G</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="ukg" class="hidden-content mt-4 pt-4 border-t border-gray-100">
+                        <a href="Routine_UKG.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                    </div>
+                </div>
+
+                <!-- Class 4 Example with Syllabus -->
+                <div onclick="toggleGrade('c4')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Class 4</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="c4" class="hidden-content mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <a href="Routine_Class4.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                        <a href="Class4_Syllabus.pdf" target="_blank" class="block bg-gold text-navy text-[10px] py-2 rounded hover:bg-navy hover:text-white font-bold uppercase">View Syllabus</a>
+                    </div>
+                </div>
+
+                <!-- Class 5 -->
+                <div onclick="toggleGrade('c5')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Class 5</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="c5" class="hidden-content mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <a href="Routine_Class5.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                        <a href="Class5_Syllabus.pdf" target="_blank" class="block bg-gold text-navy text-[10px] py-2 rounded hover:bg-navy hover:text-white font-bold uppercase">View Syllabus</a>
+                    </div>
+                </div>
+
+                <!-- Class 6 -->
+                <div onclick="toggleGrade('c6')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Class 6</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="c6" class="hidden-content mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <a href="Routine_Class6.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                        <a href="Class6_Syllabus.pdf" target="_blank" class="block bg-gold text-navy text-[10px] py-2 rounded hover:bg-navy hover:text-white font-bold uppercase">View Syllabus</a>
+                    </div>
+                </div>
+
+                <!-- Class 7 -->
+                <div onclick="toggleGrade('c7')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Class 7</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="c7" class="hidden-content mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <a href="Routine_Class7.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                        <a href="Class7_Syllabus.pdf" target="_blank" class="block bg-gold text-navy text-[10px] py-2 rounded hover:bg-navy hover:text-white font-bold uppercase">View Syllabus</a>
+                    </div>
+                </div>
+
+                <!-- Class 8 -->
+                <div onclick="toggleGrade('c8')" class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
+                    <h5 class="font-bold text-navy text-lg uppercase">Class 8</h5>
+                    <p class="text-[10px] text-gold font-bold">Click to Expand</p>
+                    <div id="c8" class="hidden-content mt-4 pt-4 border-t border-gray-100 space-y-2">
+                        <a href="Routine_Class8.pdf" target="_blank" class="block bg-navy text-white text-[10px] py-2 rounded hover:bg-gold font-bold uppercase">View Routine</a>
+                        <a href="Class8_Syllabus.pdf" target="_blank" class="block bg-gold text-navy text-[10px] py-2 rounded hover:bg-navy hover:text-white font-bold uppercase">View Syllabus</a>
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-navy text-white">
-    <div class="container mx-auto px-6 text-center lg:text-left">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h3 class="text-4xl font-serif mb-8 text-gold">Contact Us</h3>
-                <p class="mb-4"><i class="fas fa-map-marker-alt text-gold mr-3"></i> East Ashochak, Jakariyapur, Patna - 800007</p>
-                <p class="mb-8"><i class="fas fa-phone-alt text-gold mr-3"></i> +91 9182485922</p>
-                <a href="https://maps.app.goo.gl/9DqAUPK1D1pU7U6M8" target="_blank" class="bg-white text-navy px-8 py-3 rounded-full font-bold hover:bg-gold transition shadow-xl inline-block">
-                    <i class="fas fa-location-arrow mr-2"></i> Get Directions
-                </a>
-            </div>
-            <div class="h-[300px] rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.14728540712!2d85.1754097!3d25.582766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f2a7c5bee2cb6b%3A0x1608546f1cfeaf0d!2sPatna%20Global%20School!5e0!3m2!1sen!2sin!4v1724330000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- Notice Board Section -->
+    <section id="notices" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-200">
+                <div class="md:w-1/3 bg-navy text-white p-10 flex flex-col justify-center relative">
+                    <i class="fas fa-bell text-5xl text-gold mb-6"></i>
+                    <h3 class="text-3xl font-serif mb-4">Notice Board</h3>
+                </div>
+                <div class="md:w-2/3 p-6 md:p-12 notice-scroll bg-slate-50">
+                    <div class="bg-white p-8 rounded-2xl border-t-8 border-gold shadow-lg">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase animate-pulse">Upcoming Event</span>
+                                <h4 class="font-bold text-navy text-2xl mt-3 tracking-tight">Rakhi Making & Mehndi Designing</h4>
+                                <p class="text-xs text-gray-400 mt-1">Event Date: 27th August 2026</p>
+                            </div>
+                            <a href="Rakhi_Competition_Notice.pdf" target="_blank" class="bg-navy text-gold p-3 rounded text-center min-w-[60px] hover:bg-gold hover:text-navy transition">
+                                <i class="fas fa-file-pdf text-xl"></i>
+                                <span class="block text-[8px] mt-1 uppercase font-bold">PDF</span>
+                            </a>
+                        </div>
+                        <div class="text-sm text-gray-700 space-y-2 mb-4">
+                            <p>Inter-house competition for <strong>Grades 3 to 8</strong> to celebrate Raksha Bandhan.</p>
+                            <ul class="list-disc list-inside text-xs space-y-1 text-gray-600">
+                                <li><strong>Time:</strong> After lunch (5th & 6th periods)</li>
+                                <li><strong>Venue:</strong> NC Class</li>
+                                <li><strong>Rule:</strong> Bring your own raw materials.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-navy/5 p-4 rounded-lg border-l-4 border-navy">
+                            <p class="text-xs text-navy font-bold italic underline">Consent form must be submitted to Shubham Sir by 26th August.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy text-white">
+        <div class="container mx-auto px-6 text-center lg:text-left">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-serif mb-8 text-gold">Contact Us</h3>
+                    <p class="mb-4"><i class="fas fa-map-marker-alt text-gold mr-3"></i> East Ashochak, Jakariyapur, Patna - 800007</p>
+                    <p class="mb-8"><i class="fas fa-phone-alt text-gold mr-3"></i> +91 9182485922</p>
+                    <a href="https://maps.app.goo.gl/9DqAUPK1D1pU7U6M8" target="_blank" class="bg-white text-navy px-8 py-3 rounded-full font-bold hover:bg-gold transition shadow-xl inline-block">
+                        <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                    </a>
+                </div>
+                <div class="h-[300px] rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.14728540712!2d85.1754097!3d25.582766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f2a7c5bee2cb6b%3A0x1608546f1cfeaf0d!2sPatna%20Global%20School!5e0!3m2!1sen!2sin!4v1724330000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 text-center">
+        <div class="container mx-auto px-6">
+            <h4 class="text-2xl font-serif mb-2 tracking-tight">PATNA GLOBAL SCHOOL</h4>
+            <p class="text-gold font-bold tracking-[0.3em] mb-8 uppercase text-[10px]">Learn • Discover • Lead</p>
+            <div class="flex justify-center space-x-6 mb-8 text-xl">
+                <a href="https://www.instagram.com/patna_global_school/" target="_blank" class="hover:text-gold transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Patna_Global_School" target="_blank" class="hover:text-gold transition"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-gray-500 text-[10px]">&copy; 2026 Patna Global School. All Rights Reserved. <br>Designed for Session 2026-27.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Show/Hide Logic -->
+    <script>
+        // Toggle Academics Files
+        function toggleAcademics() {
+            const content = document.getElementById('academic-files');
+            content.classList.toggle('show');
+        }
+
+        // Toggle Grade Details (Routine/Syllabus)
+        function toggleGrade(id) {
+            // Close other open grades first (optional, for accordion effect)
+            // const allGrades = document.querySelectorAll('.hidden-content');
+            // allGrades.forEach(grade => { if(grade.id !== id && grade.id !== 'academic-files') grade.classList.remove('show'); });
+
+            const content = document.getElementById(id);
+            content.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
