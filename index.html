@@ -187,44 +187,76 @@
         </div>
     </section>
 
-    <!-- Notice Board Section -->
+   <!-- Notice Board Section -->
     <section id="notices" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-200">
+                <!-- Side Header -->
                 <div class="md:w-1/3 bg-navy text-white p-10 flex flex-col justify-center relative">
                     <i class="fas fa-bell text-5xl text-gold mb-6"></i>
-                    <h3 class="text-3xl font-serif mb-4">Notice Board</h3>
+                    <h3 class="text-3xl font-serif mb-4">Latest Notices</h3>
+                    <p class="text-xs text-gray-300">Stay updated with the latest school holidays and events.</p>
                 </div>
-                <div class="md:w-2/3 p-6 md:p-12 notice-scroll bg-slate-50">
+
+                <!-- Notices List -->
+                <div class="md:w-2/3 p-6 md:p-12 notice-scroll bg-slate-50 space-y-8">
                     
-                    <!-- Updated Competition Notice from PDF -->
-                    <div class="bg-white p-8 rounded-2xl border-t-8 border-gold shadow-lg">
-                        <div class="flex justify-between items-start mb-6">
+                    <!-- Raksha Bandhan Holidays -->
+                    <div class="bg-white p-6 rounded-2xl border-t-8 border-red-600 shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
                             <div>
-                                <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase animate-pulse">Upcoming Event</span>
-                                <h4 class="font-bold text-navy text-2xl mt-3 tracking-tight">Teacher's Day Celebration</h4>
-                                <p class="text-xs text-gray-400 mt-1">Event Date: 5th September 2026</p>
+                                <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Holiday</span>
+                                <h4 class="font-bold text-navy text-xl mt-2">Raksha Bandhan Holidays</h4>
+                                <p class="text-xs text-red-600 font-bold mt-1"><i class="fas fa-calendar-check mr-1"></i> 28th & 29th August 2026</p>
                             </div>
-                            <a href="" target="_blank" class="bg-navy text-gold p-3 rounded text-center min-w-[60px] hover:bg-gold hover:text-navy transition">
-                                <i class="fas fa-file-pdf text-xl"></i>
-                                <span class="block text-[8px] mt-1 uppercase font-bold">PDF</span>
-                            </a>
+                            <div class="text-red-200 text-4xl"><i class="fas fa-sun"></i></div>
                         </div>
-                        <div class="text-sm text-gray-700 space-y-2 mb-4">
-                            <p>Teacher's Day Clebration</p>
-                            <ul class="list-disc list-inside text-xs space-y-1 text-gray-600">
-                             
+                        <p class="text-sm text-gray-600">The school will observe holidays on 28th and 29th August for Raksha Bandhan. Classes will resume as per regular schedule after the break.</p>
+                    </div>
+
+                    <!-- Janmashtami Celebration -->
+                    <div class="bg-white p-6 rounded-2xl border-t-8 border-gold shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-gold text-navy text-[10px] font-bold px-2 py-1 rounded uppercase">Campus Celebration</span>
+                                <h4 class="font-bold text-navy text-xl mt-2">Krishna Janmashtami Celebration</h4>
+                                <p class="text-xs text-navy font-bold mt-1"><i class="fas fa-map-marker-alt mr-1"></i> School Campus | 3rd Sept 2026</p>
+                            </div>
+                            <div class="text-gold opacity-30 text-4xl"><i class="fas fa-om"></i></div>
                         </div>
-                        <div class="bg-navy/5 p-4 rounded-lg border-l-4 border-navy">
-                            <p class="text-xs text-navy font-bold italic underline">Consent form must be submitted to Shubham Sir by 25th August before 3rd period.</p>
+                        <p class="text-sm text-gray-600">Students are invited to celebrate Janmashtami at the school campus. Activities include Dahi Handi and devotional songs.</p>
+                    </div>
+
+                    <!-- Janmashtami Holiday -->
+                    <div class="bg-white p-6 rounded-2xl border-t-8 border-red-600 shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Holiday</span>
+                                <h4 class="font-bold text-navy text-xl mt-2">Krishna Janmashtami</h4>
+                                <p class="text-xs text-red-600 font-bold mt-1"><i class="fas fa-calendar-times mr-1"></i> 4th September 2026</p>
+                            </div>
+                            <div class="text-red-200 text-4xl"><i class="fas fa-moon"></i></div>
                         </div>
+                        <p class="text-sm text-gray-600">The school will remain closed on 4th September on the auspicious occasion of Krishna Janmashtami.</p>
+                    </div>
+
+                    <!-- Teacher's Day -->
+                    <div class="bg-white p-6 rounded-2xl border-t-8 border-navy shadow-lg">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="bg-navy text-white text-[10px] font-bold px-2 py-1 rounded uppercase">School Event</span>
+                                <h4 class="font-bold text-navy text-xl mt-2">Teacher's Day Celebration</h4>
+                                <p class="text-xs text-gold font-bold italic mt-1"><i class="fas fa-calendar-day mr-1"></i> 5th September 2026</p>
+                            </div>
+                            <div class="text-navy opacity-20 text-4xl"><i class="fas fa-apple-alt"></i></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Join us in honoring our educators! Special cultural programs will be organized by students to show gratitude to our teachers.</p>
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-navy text-white">
         <div class="container mx-auto px-6 text-center lg:text-left">
