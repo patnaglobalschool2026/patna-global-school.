@@ -136,6 +136,71 @@
                     <p class="text-[10px] text-gold uppercase font-bold mb-4 tracking-widest">Routine Available</p>
                     <a href="Routine_UKG.pdf" target="_blank" class="text-[10px] bg-navy text-white px-3 py-1.5 rounded hover:bg-gold transition">View Routine</a>
                 </div>
+                  <!-- Student Profile Access Section -->
+<section id="student-portal" class="py-20 bg-slate-100">
+    <div class="container mx-auto px-6 text-center">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl border-t-8 border-navy">
+            <i class="fas fa-user-graduate text-5xl text-gold mb-4"></i>
+            <h3 class="text-2xl font-serif text-navy mb-2">Student Portal</h3>
+            <p class="text-gray-500 text-sm mb-6">Enter details to view student profile</p>
+            
+            <div class="space-y-4">
+                <input type="text" id="adminNo" placeholder="Admission Number (e.g. 2026001)" 
+                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-gold outline-none">
+                
+                <input type="password" id="studentPass" placeholder="Password" 
+                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-gold outline-none">
+                
+                <button onclick="accessProfile()" 
+                    class="w-full bg-navy text-white font-bold py-3 rounded-lg hover:bg-gold hover:text-navy transition">
+                    View Profile
+                </button>
+            </div>
+            <p id="loginError" class="text-red-500 text-xs mt-4 hidden">Invalid Admission Number or Password!</p>
+        </div>
+    </div>
+</section>
+
+<!-- THE PROFILE MODAL (Hidden by default) -->
+<div id="profileModal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-md rounded-2xl overflow-hidden relative animate-fadeIn">
+        <button onclick="closeProfile()" class="absolute top-4 right-4 text-gray-400 hover:text-navy text-2xl">&times;</button>
+        
+        <div class="bg-navy p-6 text-center">
+            <div class="w-24 h-24 bg-white rounded-full mx-auto mb-3 border-4 border-gold flex items-center justify-center">
+                <i class="fas fa-user text-4xl text-navy"></i>
+            </div>
+            <h4 id="dispName" class="text-white text-xl font-bold uppercase tracking-tight">Student Name</h4>
+            <p id="dispClass" class="text-gold text-sm font-bold">Class X</p>
+        </div>
+        
+        <div class="p-6 space-y-3 text-sm">
+            <div class="flex justify-between border-b pb-2">
+                <span class="text-gray-500">Admission No:</span>
+                <span id="dispAdmin" class="font-bold text-navy">---</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+                <span class="text-gray-500">Father's Name:</span>
+                <span id="dispFather" class="font-bold text-navy">---</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+                <span class="text-gray-500">Date of Birth:</span>
+                <span id="dispDOB" class="font-bold text-navy">---</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+                <span class="text-gray-500">Blood Group:</span>
+                <span id="dispBlood" class="font-bold text-navy">---</span>
+            </div>
+            <div class="flex justify-between border-b pb-2">
+                <span class="text-gray-500">House:</span>
+                <span id="dispHouse" class="font-bold text-navy">---</span>
+            </div>
+        </div>
+        <div class="p-4 bg-slate-50 text-center">
+            <button onclick="window.print()" class="text-navy text-xs font-bold underline"><i class="fas fa-print mr-1"></i> Print Profile</button>
+        </div>
+    </div>
+</div>
 
                 <!-- Classes 1-8 Routines & Syllabuses -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border-2 border-gold card-hover text-center">
@@ -263,71 +328,7 @@
             </div>
         </div>
     </section>
-    <!-- Student Profile Access Section -->
-<section id="student-portal" class="py-20 bg-slate-100">
-    <div class="container mx-auto px-6 text-center">
-        <div class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl border-t-8 border-navy">
-            <i class="fas fa-user-graduate text-5xl text-gold mb-4"></i>
-            <h3 class="text-2xl font-serif text-navy mb-2">Student Portal</h3>
-            <p class="text-gray-500 text-sm mb-6">Enter details to view student profile</p>
-            
-            <div class="space-y-4">
-                <input type="text" id="adminNo" placeholder="Admission Number (e.g. 2026001)" 
-                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-gold outline-none">
-                
-                <input type="password" id="studentPass" placeholder="Password" 
-                    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-gold outline-none">
-                
-                <button onclick="accessProfile()" 
-                    class="w-full bg-navy text-white font-bold py-3 rounded-lg hover:bg-gold hover:text-navy transition">
-                    View Profile
-                </button>
-            </div>
-            <p id="loginError" class="text-red-500 text-xs mt-4 hidden">Invalid Admission Number or Password!</p>
-        </div>
-    </div>
-</section>
-
-<!-- THE PROFILE MODAL (Hidden by default) -->
-<div id="profileModal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4">
-    <div class="bg-white w-full max-w-md rounded-2xl overflow-hidden relative animate-fadeIn">
-        <button onclick="closeProfile()" class="absolute top-4 right-4 text-gray-400 hover:text-navy text-2xl">&times;</button>
-        
-        <div class="bg-navy p-6 text-center">
-            <div class="w-24 h-24 bg-white rounded-full mx-auto mb-3 border-4 border-gold flex items-center justify-center">
-                <i class="fas fa-user text-4xl text-navy"></i>
-            </div>
-            <h4 id="dispName" class="text-white text-xl font-bold uppercase tracking-tight">Student Name</h4>
-            <p id="dispClass" class="text-gold text-sm font-bold">Class X</p>
-        </div>
-        
-        <div class="p-6 space-y-3 text-sm">
-            <div class="flex justify-between border-b pb-2">
-                <span class="text-gray-500">Admission No:</span>
-                <span id="dispAdmin" class="font-bold text-navy">---</span>
-            </div>
-            <div class="flex justify-between border-b pb-2">
-                <span class="text-gray-500">Father's Name:</span>
-                <span id="dispFather" class="font-bold text-navy">---</span>
-            </div>
-            <div class="flex justify-between border-b pb-2">
-                <span class="text-gray-500">Date of Birth:</span>
-                <span id="dispDOB" class="font-bold text-navy">---</span>
-            </div>
-            <div class="flex justify-between border-b pb-2">
-                <span class="text-gray-500">Blood Group:</span>
-                <span id="dispBlood" class="font-bold text-navy">---</span>
-            </div>
-            <div class="flex justify-between border-b pb-2">
-                <span class="text-gray-500">House:</span>
-                <span id="dispHouse" class="font-bold text-navy">---</span>
-            </div>
-        </div>
-        <div class="p-4 bg-slate-50 text-center">
-            <button onclick="window.print()" class="text-navy text-xs font-bold underline"><i class="fas fa-print mr-1"></i> Print Profile</button>
-        </div>
-    </div>
-</div>
+  
 
    <!-- Footer -->
     <footer class="bg-black text-white py-12 text-center">
